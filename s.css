@@ -1,0 +1,185 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f0f0f0;
+}
+
+
+/* soat */
+
+.clock {
+    width: 600px;
+    height: 600px;
+    border: 10px solid white;
+    border-radius: 50%;
+    background: black;
+    position: relative;
+    color: white;
+}
+
+
+/* minut chiziqlari */
+
+.minutes {
+    position: absolute;
+    inset: 0;
+}
+
+.minutes span {
+    position: absolute;
+    width: 2px;
+    height: 12px;
+    background: white;
+    top: 50%;
+    left: 50%;
+    transform: rotate(calc(var(--i) * 6deg)) translateY(-280px);
+}
+
+
+/* strelkalar */
+
+.sekund::after {
+    border-bottom: 12px solid red;
+}
+
+.minut::after {
+    border-bottom: 10px solid white;
+}
+
+.soat::after {
+    border-bottom: 8px solid gray;
+}
+
+.sekund,
+.minut,
+.soat {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform-origin: bottom center;
+    transform: translateX(-50%) translateY(-100%);
+    background: #888;
+    z-index: 2;
+}
+
+.sekund {
+    width: 6px;
+    height: 260px;
+    animation: rotate 60s linear infinite;
+}
+
+.minut {
+    width: 10px;
+    height: 220px;
+    animation: rotate 3600s linear infinite;
+}
+
+.soat {
+    width: 14px;
+    height: 180px;
+    animation: rotate 43200s linear infinite;
+}
+
+
+/* animatsiya */
+
+@keyframes rotate {
+    from {
+        transform: translateX(-50%) translateY(-100%) rotate(0deg);
+    }
+    to {
+        transform: translateX(-50%) translateY(-100%) rotate(360deg);
+    }
+}
+
+
+/* raqamlar */
+
+.number {
+    position: absolute;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.n12 {
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.n3 {
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.n6 {
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.n9 {
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.n1 {
+    top: 70px;
+    right: 150px;
+}
+
+.n2 {
+    top: 150px;
+    right: 70px;
+}
+
+.n4 {
+    bottom: 150px;
+    right: 70px;
+}
+
+.n5 {
+    bottom: 70px;
+    right: 150px;
+}
+
+.n7 {
+    bottom: 70px;
+    left: 150px;
+}
+
+.n8 {
+    bottom: 150px;
+    left: 70px;
+}
+
+.n10 {
+    top: 150px;
+    left: 70px;
+}
+
+.n11 {
+    top: 70px;
+    left: 150px;
+}
+
+
+/* text */
+
+.text {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
